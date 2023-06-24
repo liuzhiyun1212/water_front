@@ -49,6 +49,18 @@ export const constantRoutes = [
     path: '/pages/equipmanager',
     component: () => import('@/views/pages/equipmanager'),
     hidden: true
+  },{
+    path: '/pages/Knowledgegraph',
+    component: () => import('@/views/pages/Knowledgegraph'),
+    hidden: true
+  },{
+    path: '/pages/lifecycle',
+    component: () => import('@/views/pages/lifecycle'),
+    hidden: true
+  },{
+    path: '/pages/Patrolmanagement',
+    component: () => import('@/views/pages/Patrolmanagement'),
+    hidden: true
   },
   {
     path: '/register',

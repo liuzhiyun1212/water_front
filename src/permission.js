@@ -9,7 +9,8 @@ import { isRelogin } from '@/utils/request'
 
 NProgress.configure({ showSpinner: false })
 
-const whiteList = ['/login', '/auth-redirect', '/bind', '/register','/pages/equipmanager']
+const whiteList = ['/login', '/auth-redirect', '/bind', '/register',
+  '/pages/Patrolmanagement','/pages/lifecycle','/pages/Knowledgegraph','/pages/equipmanager']
 const loginForm= {
   username: "admin",
   password: "admin123",
