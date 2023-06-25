@@ -106,18 +106,6 @@
               icon="el-icon-document"
               @click="toTheSystem(6)"
             >详情</el-button>
-            <el-button
-              size="mini"
-              type="text"
-              icon="el-icon-edit"
-              @click="toTheSystem(6)"
-            >修改</el-button>
-            <el-button
-              size="mini"
-              type="text"
-              icon="el-icon-delete"
-              @click="toTheSystem(6)"
-            >删除</el-button>
           </template>
         </el-table-column>
       </el-table>
@@ -208,18 +196,18 @@ export default {
           {
             "searchValue": null,
             "createBy": null,
-            "createTime": "2022-10-14 11:30:52",
+            "createTime": null,
             "updateBy": null,
             "updateTime": null,
             "remark": null,
             "params": {},
-            "graphId": 13,
-            "graphName": "图谱1014",
+            "graphId": 1,
+            "graphName": null,
             "graphNodes": "[{\"id\":\"2\",\"label\":\"一期泵房\",\"type\":\"customNode0\",\"size\":120,\"data\":\"一期泵房\",\"style\":{\"stroke\":\"#fff\",\"fill\":\"rgb(123,217,240)\",\"opacity\":1}},{\"id\":\"6\",\"label\":\"KOSW-450K离心...\",\"type\":\"customNode1\",\"size\":110,\"data\":\"KOSW-450K离心泵 Y-SB-15-04\",\"style\":{\"stroke\":\"#fff\",\"fill\":\"rgb(191,226,204)\",\"opacity\":1}}]",
             "graphEdges": "[{\"id\":\"edge-0.62185595438768231665718219021\",\"source\":\"2\",\"target\":\"6\",\"label\":\"包含\",\"type\":\"quadratic\",\"style\":{\"endArrow\":true,\"startArrow\":false},\"labelCfg\":{\"autoRotate\":true}}]",
             "graphType": 3,
-            "graphInfo": "图谱1014",
-            "graphCreator": "佚名"
+            "graphInfo": null,
+            "graphCreator": null
           }
         ],
         "code": 200,

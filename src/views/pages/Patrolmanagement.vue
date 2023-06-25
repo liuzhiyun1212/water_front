@@ -96,13 +96,6 @@
               @click="toTheSystem(1)"
               :disabled="scope.row.maintenanceName!==null&&scope.row.maintenanceName!==''"
             >修改</el-button>
-            <el-button
-              size="mini"
-              type="danger"
-              icon="el-icon-delete"
-              @click="toTheSystem(1)"
-              :disabled="scope.row.maintenanceName!==null&&scope.row.maintenanceName!==''"
-            >删除</el-button>
           </template>
         </el-table-column>
       </el-table>
@@ -206,7 +199,7 @@ export default {
         this.queryParams.params["endDate"] = this.dateRange[1];
       }
       let res = {
-        "total": 4,
+        "total": 1,
         "rows": [
           {
             "searchValue": null,
@@ -216,71 +209,12 @@ export default {
             "updateTime": null,
             "remark": null,
             "params": {},
-            "id": 117,
-            "inspectName": "10-13第二次巡检",
-            "dangerAddress": "二期泵站",
-            "description": "机器运转温度过高，转速下降",
-            "equipemnts": "[{\"name\":\"三相异步电动机\",\"code\":\"E-DJ-21-08\",\"state\":\"老化性故障\"}]",
-            "isMaintain": "否",
-            "pic": "[{\"name\":\"u=2785442067,2244671174&fm=253&fmt=auto&app=120&f=JPEG_20221013173914A039.jpg\",\"nowDate\":\"2022/10/13\"}]",
-            "date": "2022-10-13",
-            "inspectPeople": "王心茹",
-            "maintenanceName": null
-          },
-          {
-            "searchValue": null,
-            "createBy": null,
-            "createTime": null,
-            "updateBy": null,
-            "updateTime": null,
-            "remark": null,
-            "params": {},
-            "id": 116,
-            "inspectName": "10-13巡检",
-            "dangerAddress": "一期泵站一号泵组",
-            "description": "机器异响，运转噪音过大。",
-            "equipemnts": "[{\"name\":\"KOSW-450K离心泵\",\"code\":\"Y-SB-15-04\",\"state\":\"磨损性故障\"}]",
-            "isMaintain": "是",
-            "pic": "[{\"name\":\"u=2785442067,2244671174&fm=253&fmt=auto&app=120&f=JPEG_20221013173730A038.jpg\",\"nowDate\":\"2022/10/13\"}]",
-            "date": "2022-10-13",
-            "inspectPeople": "王心茹",
-            "maintenanceName": "维保1013晚上"
-          },
-          {
-            "searchValue": null,
-            "createBy": null,
-            "createTime": null,
-            "updateBy": null,
-            "updateTime": null,
-            "remark": null,
-            "params": {},
-            "id": 114,
-            "inspectName": "测试1012",
-            "dangerAddress": "测试1012",
-            "description": "测试1012",
-            "equipemnts": "[{\"name\":\"伸缩接头（dn800）\",\"code\":\"E-SS-21-08-800\",\"state\":\"腐蚀性故障\"},{\"name\":\"YSP400-4三相异步电动机\",\"code\":\"Y-DJ-15-04\",\"state\":\"磨损性故障\"}]",
-            "isMaintain": "是",
-            "pic": "[{\"name\":\"profile_20220925234304A002_20221012130114A017.jpg\",\"nowDate\":\"2022/10/12\"}]",
-            "date": "2022-10-12",
-            "inspectPeople": "admin",
-            "maintenanceName": null
-          },
-          {
-            "searchValue": null,
-            "createBy": null,
-            "createTime": null,
-            "updateBy": null,
-            "updateTime": null,
-            "remark": null,
-            "params": {},
             "id": 113,
-            "inspectName": "1",
-            "dangerAddress": "1",
+            "inspectName": null,
+            "dangerAddress": null,
             "description": "1",
-            "equipemnts": "[{\"name\":\"伸缩接头（dn800）\",\"code\":\"E-SS-21-08-800\",\"state\":\"腐蚀性故障\"}]",
-            "isMaintain": "是",
-            "pic": "[{\"name\":\"profile_20220925234304A002_20221011211015A016.jpg\",\"nowDate\":\"2022/10/11\"}]",
-            "date": "2022-10-11",
+            "isMaintain": null,
+            "date": null,
             "inspectPeople": "admin",
             "maintenanceName": null
           }
