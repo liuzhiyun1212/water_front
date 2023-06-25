@@ -61,6 +61,14 @@ export const constantRoutes = [
     path: '/pages/Patrolmanagement',
     component: () => import('@/views/pages/Patrolmanagement'),
     hidden: true
+  },{
+    path: '/pages/AuditManagement',
+    component: () => import('@/views/pages/AuditManagement'),
+    hidden: true
+  },{
+    path: '/pages/systemmanagement',
+    component: () => import('@/views/pages/systemmanagement'),
+    hidden: true
   },
   {
     path: '/register',
