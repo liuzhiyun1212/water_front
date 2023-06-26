@@ -87,7 +87,7 @@
           <right-toolbar :showSearch.sync="showSearch" @queryTable="getList"></right-toolbar>
         </el-row>
       </el-card>
-      <el-table v-loading="loading" :data="graphList" @selection-change="handleSelectionChange" style="margin-top: 10px">
+      <!-- <el-table v-loading="loading" :data="graphList" @selection-change="handleSelectionChange" style="margin-top: 10px">
         <el-table-column type="selection" width="55" align="center" />
         <el-table-column label="图谱序号" align="center" prop="graphId" />
         <el-table-column label="图谱名称" align="center" prop="graphName" />
@@ -115,7 +115,10 @@
         :page.sync="queryParams.pageNum"
         :limit.sync="queryParams.pageSize"
         @pagination="getList"
-      />
+      /> -->
+      <div style="text-align:center;font-size: 8em;color: white;background-color: rgb(223, 221, 221);border-radius: 10px;padding: 1em;margin: 4px;">
+        点击查看详情
+      </div>
     </el-card>
   </div>
 </template>

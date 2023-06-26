@@ -104,7 +104,7 @@
                style="align-self: center;width:30px; height:30px; float: left;">
           </div>
         </div>
-        <el-table :header-cell-style="{
+        <!-- <el-table :header-cell-style="{
             background: '#84BBFE',
             color: '#fff',
             fontSize: '14px',
@@ -168,8 +168,29 @@
           layout="total, sizes, prev, pager, next, jumper"
           :total="totalpage"
           style="margin-left: 650px; margin-top: 10px"
-        >
-        </el-pagination>
+        > 
+        </el-pagination> -->
+        <el-row >
+          <el-row>
+            <el-col :span="8"> 
+              <div style="font-size: 3em;background-color: #40e0d0;text-align: center;border-radius: 10px;margin: 5px;padding: 1em;">首页</div>
+            </el-col>
+            <el-col :span="8">
+              <div style="font-size: 3em;background-color:#FF6347;text-align: center;border-radius: 10px;margin: 5px;padding: 1em;">综合查询</div>
+            </el-col>
+            <el-col :span="8">
+              <div style="font-size: 3em;background-color:#5B8FF9 ;text-align: center;border-radius: 10px;margin: 5px;padding: 1em;">综合统计</div>
+            </el-col>
+          </el-row>
+          <el-row>
+            <el-col :span="12">
+              <div style="font-size: 3em;background-color:#d2e9ff;text-align: center;border-radius: 10px;margin: 5px;padding: 1em;">状态调整</div>
+            </el-col>
+            <el-col :span="12">
+              <div style="font-size: 3em;background-color:#da70d6;text-align: center;border-radius: 10px;margin: 5px;padding: 1em;">进度可视化</div>
+            </el-col>
+          </el-row>
+        </el-row>
       </el-card>
   </div>
 </template>
