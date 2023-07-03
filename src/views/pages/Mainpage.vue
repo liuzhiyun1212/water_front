@@ -27,17 +27,12 @@
       <el-main class="main">
         <el-row>
 
-          <el-col :span="7" class="col-first">
-            <el-card class="box-card" :style="rightHeight1">
-              <div style="color: white;">巡检管理</div>
+          <el-col :span="7">
+            <div class="box-card" :style="rightHeight1">
+              <div class="title">巡检管理</div>
+            </div>
 
 
-            </el-card>
-            <el-card class="box-card" :style="rightHeight2">
-              <div style="color: white;">维保管理</div>
-
-
-            </el-card>
           </el-col>
 
           <el-col :span="10">
@@ -64,11 +59,29 @@
                 <span><scroll-number :val="equ.badequ"></scroll-number></span>
               </div>
             </el-card>
-
             <div :style="middleHeight1">
               <Times :height="middleHeight1.height" />
             </div>
+          </el-col>
 
+          <el-col :span="7">
+            <el-card class="box-card" :style="rightHeight1">
+                <div class="title">生命周期</div>
+
+            </el-card>
+          </el-col>
+        </el-row>
+
+        <el-row>
+          <el-col :span="7">
+            <el-card class="box-card" :style="rightHeight2">
+              <div style="color: white;">维保管理</div>
+
+
+            </el-card>
+          </el-col>
+
+          <el-col :span="10">
             <el-card class="box-card" :style="middleHeight2">
               <div style="color: white;">知识图谱</div>
 
@@ -77,13 +90,6 @@
           </el-col>
 
           <el-col :span="7">
-            <el-card class="box-card" :style="rightHeight1">
-              <div class="a" style="">
-                <div style="color: white;">生命周期</div>
-
-
-              </div>
-            </el-card>
             <el-card class="box-card" :style="rightHeight2">
               <div style="color: white;">系统管理</div>
 
@@ -1654,6 +1660,49 @@ export default {
   float: right;
   background-color: rgba(0, 0, 0, 0);
 }
+
+.title {
+  display: inline-block;
+  width: 100px;
+  text-align: center;
+  /* height: 50px; */
+  position: relative;
+  /* line-height: 50px; */
+  /* margin-top: 15px; */
+  margin-left: 35px;
+  margin-right: 38px;
+  box-sizing: border-box;
+  border-radius: 5px;
+  box-shadow: -10px 0px 15px #0c6a93 inset,
+    0px -10px 15px #7f9aa4 inset;
+
+  color: #ffffff;
+  /*display: inline-block;*/
+  /*padding: 0 15px 0 5px;*/
+  font-size: 20px;
+  background-color: rgba(0, 0, 0, 0);
+  cursor: pointer;
+}
+
+
+.title i {
+  width: 3px;
+  /* height: 1px; */
+  display: inline-block;
+  position: relative;
+  /* top:3px; */
+  background-color: rgba(0, 0, 0, 0);
+  /* margin-right: 5px; */
+}
+
+.title:hover {
+  box-shadow: -10px 0px 15px #0fc0ec inset,
+    0px -10px 15px #0ab0ec inset,
+    10px 0px 15px #0d9ddb inset,
+    0px 10px 15px #0da1e0 inset;
+  box-sizing: border-box;
+}
+
 
 .nav {
   background-color: rgba(0, 0, 0, 0);
