@@ -7,6 +7,7 @@
           <div class="left nav">
             <ul>
               <li @click="toInspection" style="margin-left: 0px;"><i></i>巡检管理</li>
+              
               <li @click="toLife" style="margin-left: 43px;margin-right: 38px;"><i></i>生命周期</li>
             </ul>
           </div>
@@ -31,7 +32,7 @@
             <div @click="toInspection" class="rowdiv">
               <el-card class="box-card1" shadow="hover">
                 <div class="title" @click="toInspection">巡检管理</div>
-
+                <img class="syxj" src="../../assets/首页巡检.png">
               </el-card>
             </div>
 
@@ -82,7 +83,7 @@
             <div @click="toLife" class="rowdiv">
               <el-card class="box-card1" shadow="hover">
                 <div class="title" @click="toPlan">维保管理</div>
-
+                <img class="syxj" src="../../assets/维保管理.png">
               </el-card>
             </div>
 
@@ -1642,6 +1643,11 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
+.syxj{
+  width: 200%;
+  height: auto;
+  padding-top: 3%;
+}
 * {
   /* margin: 0;
   padding: 0; */
