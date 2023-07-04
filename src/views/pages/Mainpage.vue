@@ -71,7 +71,9 @@
             <div @click="toLife" class="rowdiv">
               <el-card class="box-card1" shadow="hover">
                 <div class="title" @click="toLife">生命周期</div>
-
+                <div :style="middleHeight1">
+                  <second-table></second-table>
+                </div>
               </el-card>
             </div>
 
@@ -143,6 +145,8 @@ import { listPlan, getPlan, delPlan, addPlan, updatePlan, state } from '@/api/sy
 import { autoHover } from '@/utils/tools.js'
 //设备表
 import firstTable from '../life/firstTable'
+//生命周期
+import secondTable from '../life/secondTable'
 import Cookies from "js-cookie";
 import scrollNumber from '@/components/scrollNumber/scrollNumber'
 //需要挂载到Vue原型上
@@ -159,7 +163,8 @@ export default {
     firstTable,
     Times,
     scrollNumber,
-    Predict
+    Predict,
+    secondTable,
   },
   data() {
     return {
