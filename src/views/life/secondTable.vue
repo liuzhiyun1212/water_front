@@ -111,7 +111,6 @@
       },
       init() {
         this.mainHeight = document.body.clientHeight;
-        this.buttomHeight = document.body.clientHeight * 0.4;
       },
       //获取数据库设备表信息
       getDevList() {
@@ -149,7 +148,6 @@
         dialogVisible: false,
         dialogVisible1:false,
         mainHeight: 800,
-        buttomHeight: "400px",
         currentPage4: 1,
         pageSize: 50,
         tableData1: [],

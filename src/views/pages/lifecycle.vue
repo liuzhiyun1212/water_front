@@ -70,7 +70,7 @@
             <div @click="toLife" class="rowdiv">
               <el-card class="box-card1" shadow="hover">
                 <div class="title" @click="toLife">生命周期</div>
-                <div>
+                <div :style="middleHeight1">
                   <second-table></second-table>
                 </div>
               </el-card>
