@@ -1643,11 +1643,6 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-.syxj{
-  width: 200%;
-  height: auto;
-  padding-top: 3%;
-}
 * {
   /* margin: 0;
   padding: 0; */
@@ -1959,11 +1954,14 @@ h3 {
   height: 100%;
   border-color: rgba(29, 86, 153, 0.5);
   /* background: transparent !important; */
-  /* background-color: rgba(255, 255, 255, 0.1); */
+  /* background-color: rgba(255, 255, 255, 0.4); */
   cursor: pointer;
-
 }
-
+.syxj{
+  /* width: 200%; */
+  /* height: 50%; */
+  margin-top: 3%;
+}
 
 .title {
   display: inline-block;
