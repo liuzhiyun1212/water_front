@@ -1967,9 +1967,6 @@ h3 {
 .box-card2 {
   width: 100%;
   height: 100%;
-  border-color: rgba(29, 86, 153, 0.5);
-  /* background: transparent !important; */
-  background-color: rgba(20, 228, 243, 0.4);
   cursor: pointer;
 }
 
