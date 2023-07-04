@@ -6,8 +6,8 @@
         <div class="head" :style="headerHeight">
           <div class="left nav">
             <ul>
-              <li @click="toLife" style="margin-left: 0px;"><i></i>生命周期</li>
-              <li @click="toPlan" style="margin-left: 43px;margin-right: 38px;"><i></i>维保管理</li>
+              <li @click="toInspection" style="margin-left: 0px;"><i></i>巡检管理</li>
+              <li @click="toLife" style="margin-left: 43px;margin-right: 38px;"><i></i>生命周期</li>
             </ul>
           </div>
           <!-- <div class="times">{{ FormatTime(nowTime) }}</div> -->
@@ -16,8 +16,8 @@
             设备全生命周期平台</h1>
           <div class="right nav text_right">
             <ul>
+              <li @click="toPlan"><i></i>维保管理 </li>
               <li @click="toGraph"><i></i>知识图谱 </li>
-              <li @click="toSystem"><i></i>系统管理 </li>
             </ul>
           </div>
           <!-- <span style="float: right; color: white;">欢迎您： {{ this.username }}</span> -->
@@ -25,13 +25,15 @@
 
       </el-header>
       <el-main class="main">
-        <el-row>
 
+        <el-row type="flex" justify="space-around" class="row1">
           <el-col :span="7">
-            <div class="box-card" :style="rightHeight1">
-              <div class="title">巡检管理</div>
-            </div>
+            <div @click="toInspection" class="rowdiv">
+              <el-card class="box-card1" shadow="hover">
+                <div class="title" @click="toInspection">巡检管理</div>
 
+              </el-card>
+            </div>
 
           </el-col>
 
@@ -65,38 +67,50 @@
           </el-col>
 
           <el-col :span="7">
-            <el-card class="box-card" :style="rightHeight1">
-                <div class="title">生命周期</div>
+            <div @click="toLife" class="rowdiv">
+              <el-card class="box-card1" shadow="hover">
+                <div class="title" @click="toLife">生命周期</div>
 
-            </el-card>
+              </el-card>
+            </div>
+
           </el-col>
         </el-row>
 
-        <el-row>
+        <el-row type="flex" justify="space-around" class="row2">
           <el-col :span="7">
-            <el-card class="box-card" :style="rightHeight2">
-              <div style="color: white;">维保管理</div>
+            <div @click="toLife" class="rowdiv">
+              <el-card class="box-card1" shadow="hover">
+                <div class="title" @click="toPlan">维保管理</div>
 
+              </el-card>
+            </div>
 
-            </el-card>
           </el-col>
 
-          <el-col :span="10">
-            <el-card class="box-card" :style="middleHeight2">
-              <div style="color: white;">知识图谱</div>
+          <el-col :span="9">
+            <div @click="toLife" class="rowdiv">
+              <el-card class="box-card1" shadow="hover">
+                <div class="title" @click="toGraph">知识图谱</div>
+
+              </el-card>
+            </div>
 
 
-            </el-card>
           </el-col>
 
           <el-col :span="7">
-            <el-card class="box-card" :style="rightHeight2">
-              <div style="color: white;">系统管理</div>
+            <div @click="toLife" class="rowdiv">
+              <el-card class="box-card1" shadow="hover">
+                <div class="title" @click="toSystem">系统管理</div>
 
+              </el-card>
+            </div>
 
-            </el-card>
           </el-col>
         </el-row>
+
+
       </el-main>
     </el-container>
   </div>
@@ -1290,6 +1304,13 @@ export default {
         path: "/system/user",
       })
     },
+    toInspection() {
+      this.$router.push({
+        path: "/inspection/inspection",
+      })
+    },
+
+
     // 中间饼图
     getRelation() {
       this.chPie = echarts.init(document.getElementById('relation'))
@@ -1661,49 +1682,6 @@ export default {
   background-color: rgba(0, 0, 0, 0);
 }
 
-.title {
-  display: inline-block;
-  width: 100px;
-  text-align: center;
-  /* height: 50px; */
-  position: relative;
-  /* line-height: 50px; */
-  /* margin-top: 15px; */
-  margin-left: 35px;
-  margin-right: 38px;
-  box-sizing: border-box;
-  border-radius: 5px;
-  box-shadow: -10px 0px 15px #0c6a93 inset,
-    0px -10px 15px #7f9aa4 inset;
-
-  color: #ffffff;
-  /*display: inline-block;*/
-  /*padding: 0 15px 0 5px;*/
-  font-size: 20px;
-  background-color: rgba(0, 0, 0, 0);
-  cursor: pointer;
-}
-
-
-.title i {
-  width: 3px;
-  /* height: 1px; */
-  display: inline-block;
-  position: relative;
-  /* top:3px; */
-  background-color: rgba(0, 0, 0, 0);
-  /* margin-right: 5px; */
-}
-
-.title:hover {
-  box-shadow: -10px 0px 15px #0fc0ec inset,
-    0px -10px 15px #0ab0ec inset,
-    10px 0px 15px #0d9ddb inset,
-    0px 10px 15px #0da1e0 inset;
-  box-sizing: border-box;
-}
-
-
 .nav {
   background-color: rgba(0, 0, 0, 0);
   margin-top: -10px;
@@ -1954,6 +1932,73 @@ h3 {
   background-color: transparent;
 }
 
+
+
+/* 主页 */
+.row1 {
+  height: 50%;
+  margin-bottom: 1%;
+}
+
+.row2 {
+  height: 50%
+}
+
+.rowdiv {
+  height: 100%;
+}
+
+.box-card1 {
+  width: 100%;
+  height: 100%;
+  border-color: rgba(29, 86, 153, 0.5);
+  /* background: transparent !important; */
+  /* background-color: rgba(255, 255, 255, 0.1); */
+  cursor: pointer;
+
+}
+
+
+.title {
+  display: inline-block;
+  width: 100px;
+  text-align: center;
+  /* height: 50px; */
+  position: relative;
+  /* line-height: 50px; */
+  /* margin-top: 15px; */
+  /* margin-left: 35px; */
+  /* margin-right: 38px; */
+  box-sizing: border-box;
+  border-radius: 5px;
+  box-shadow: -10px 0px 15px #0c6a93 inset,
+    0px -10px 15px #7f9aa4 inset;
+
+  color: #ffffff;
+  /*display: inline-block;*/
+  /*padding: 0 15px 0 5px;*/
+  font-size: 20px;
+  background-color: rgba(0, 0, 0, 0);
+  cursor: pointer;
+}
+
+.title i {
+  width: 3px;
+  /* height: 1px; */
+  display: inline-block;
+  position: relative;
+  /* top:3px; */
+  background-color: rgba(0, 0, 0, 0);
+  /* margin-right: 5px; */
+}
+
+.title:hover {
+  box-shadow: -10px 0px 15px #0fc0ec inset,
+    0px -10px 15px #0ab0ec inset,
+    10px 0px 15px #0d9ddb inset,
+    0px 10px 15px #0da1e0 inset;
+  box-sizing: border-box;
+}
 
 /* 维保表格信息 */
 </style>
