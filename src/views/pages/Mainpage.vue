@@ -129,10 +129,7 @@
               </el-card>
             </div>
           </el-col>
-
         </el-row>
-
-
       </el-main>
     </el-container>
   </div>
