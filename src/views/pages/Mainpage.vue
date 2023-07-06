@@ -95,7 +95,7 @@
             <div @click="toLife" class="rowdiv">
               <el-card class="box-card1" shadow="hover">
                 <div class="title" @click="toGraph">知识图谱</div>
-
+                <img class="syxj" src="../../assets/知识图谱.png">
               </el-card>
             </div>
 
