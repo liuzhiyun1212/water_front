@@ -6,19 +6,19 @@
         <div class="head" :style="headerHeight">
           <div class="left nav">
             <ul>
-              <li @click="toInspection" style="margin-left: 0px;"><i></i>巡检管理</li>
-              
-              <li @click="toLife" style="margin-left: 43px;margin-right: 38px;"><i></i>生命周期</li>
+              <li @click="toTheSystem(1)" style="margin-left: 0px;"><i></i>巡检管理</li>
+
+              <li @click="toTheSystem(11)" style="margin-left: 43px;margin-right: 38px;"><i></i>生命周期</li>
             </ul>
           </div>
           <!-- <div class="times">{{ FormatTime(nowTime) }}</div> -->
-          <h1
-            style="margin-left: 20px; font-size: 22px; color: white; font-weight: 700; margin-top: 3px; background-color: rgba(0, 0, 0, 0);">
+          <h1 @click="toTheSystem(24)"
+            style="cursor: pointer; margin-left: 20px; font-size: 22px; color: white; font-weight: 700; margin-top: 3px; background-color: rgba(0, 0, 0, 0);">
             设备全生命周期平台</h1>
           <div class="right nav text_right">
             <ul>
-              <li @click="toPlan"><i></i>维保管理 </li>
-              <li @click="toGraph"><i></i>知识图谱 </li>
+              <li @click="toTheSystem(7)"><i></i>维保管理 </li>
+              <li @click="toTheSystem(5)"><i></i>知识图谱 </li>
             </ul>
           </div>
           <!-- <span style="float: right; color: white;">欢迎您： {{ this.username }}</span> -->
@@ -29,17 +29,20 @@
 
         <el-row type="flex" justify="space-around" class="row1">
           <el-col :span="7">
-            <div @click="toInspection" class="rowdiv">
+            <div @click="toTheSystem(1)" class="rowdiv">
               <el-card class="box-card1" shadow="hover">
-                <div class="title" @click="toInspection">巡检管理</div>
-                <img class="syxj" src="../../assets/首页巡检.png">
+                <div style="width: 100%;">
+                  <div class="title" @click="toTheSystem(1)">巡检管理</div>\
+                </div>
+                <div class="sytp">
+                  <img src="../../assets/首页巡检.png">
+                </div>
               </el-card>
             </div>
-
           </el-col>
 
-          <el-col :span="10">
-            <el-card class="box-card" :style="miniHeight" style="padding-top: 0px; text-align: center;">
+          <el-col :span="9">
+            <!-- <el-card class="box-card" :style="miniHeight" style="padding-top: 0px; text-align: center;">
               <h3 class="clearfix" style="vertical-align: middle;">设备数</h3>
               <div class="num">
                 <span><scroll-number :val="this.devSum"></scroll-number></span>
@@ -61,16 +64,22 @@
               <div class="num">
                 <span><scroll-number :val="equ.badequ"></scroll-number></span>
               </div>
-            </el-card>
-            <div :style="middleHeight1">
-              <Times :height="middleHeight1.height" />
+            </el-card> -->
+            <div @click="toTheSystem(24)" class="rowdiv">
+              <el-card class="box-card1" shadow="hover">
+                <div :style="middleHeight1">
+                  <Times :height="middleHeight1.height" />
+                </div>
+              </el-card>
             </div>
           </el-col>
 
           <el-col :span="7">
-            <div @click="toLife" class="rowdiv">
+            <div @click="toTheSystem(11)" class="rowdiv">
               <el-card class="box-card1" shadow="hover">
-                <div class="title" @click="toLife">生命周期</div>
+                <div style="width: 100%;">
+                  <div class="title" @click="toTheSystem(11)">生命周期</div>
+                </div>
                 <div :style="middleHeight1">
                   <second-table></second-table>
                 </div>
@@ -82,35 +91,45 @@
 
         <el-row type="flex" justify="space-around" class="row2">
           <el-col :span="7">
-            <div @click="toLife" class="rowdiv">
+            <div @click="toTheSystem(7)" class="rowdiv">
               <el-card class="box-card1" shadow="hover">
-                <div class="title" @click="toPlan">维保管理</div>
-                <img class="syxj" src="../../assets/维保管理.png">
+                <div style="width: 100%;">
+                  <div class="title" @click="toTheSystem(7)">维保管理</div>
+                </div>
+                <div class="sytp">
+                  <img src="../../assets/维保管理.png">
+                </div>
               </el-card>
             </div>
-
           </el-col>
 
           <el-col :span="9">
-            <div @click="toLife" class="rowdiv">
+            <div @click="toTheSystem(5)" class="rowdiv">
               <el-card class="box-card1" shadow="hover">
-                <div class="title" @click="toGraph">知识图谱</div>
-
+                <div style="width: 100%;">
+                  <div class="title" @click="toTheSystem(5)">知识图谱</div>
+                </div>
+                <div class="sytp">
+                  <img class="kg" src="../../assets/kg.png">
+                </div>
               </el-card>
             </div>
-
-
           </el-col>
 
           <el-col :span="7">
-            <div @click="toLife" class="rowdiv">
+            <div @click="toTheSystem(2)" class="rowdiv">
               <el-card class="box-card1" shadow="hover">
-                <div class="title" @click="toSystem">系统管理</div>
+                <div style="width: 100%;">
+                  <div class="title" @click="toTheSystem(2)">审核管理</div>
+                </div>
+                <div class="sytp">
+                  <img src="../../assets/fzt.png">
+                </div>
 
               </el-card>
             </div>
-
           </el-col>
+
         </el-row>
 
 
@@ -128,10 +147,6 @@ import Predict from '@/views/predict/predict.vue'
 // 知识图谱
 import Graph from '@/views/graph/indexShow.vue'
 import 'echarts-liquidfill'
-// import scrollNumber from '../scroll-number.vue'
-import $ from 'jquery'
-// 导入设备信息
-import { listDevtable } from '@/api/system/devtable'
 // 甘特图
 import Gan from '@/views/maintenanceGraph/equipmentChart.vue'
 // 轮播
@@ -1287,35 +1302,60 @@ export default {
         myChart.resize()
       })
     },
-    toLife() {
-      this.$router.push({
-        path: "/life/life/equipmentTable",
-      })
-    },
-    // 维保统计跳转
-    /*toPlan(){
-      this.$router.push({
-        path:"/mainplan/maintenanceGraph/zhuye",
-      })
-    },*/
-    // 跳转知识图谱
-    toGraph() {
-      this.$router.push({
-        path: "/graph/graph/show",
-      })
-    },
-    // 系统管理跳转
-    toSystem() {
-      this.$router.push({
-        path: "/system/user",
-      })
-    },
-    toInspection() {
-      this.$router.push({
-        path: "/inspection/inspection",
-      })
+
+    toTheSystem(i) {
+      var ticket = this.$route.query.ticket
+      const routeData = this.$router.resolve({
+        path: '/register',
+        query: {
+          ticket: ticket,
+          id: i
+        }
+      });
+      window.open(routeData.href, "_blank");
     },
 
+    // // 首页跳转
+    // toMain() {
+    //   this.$router.push({
+    //     path: "/index",
+    //   })
+    // },
+
+    // // 巡检管理跳转
+    // toInspection() {
+    //   this.$router.push({
+    //     path: "/inspection/inspection",
+    //   })
+    // },
+
+    // // 生命周期跳转
+    // toLife() {
+    //   this.$router.push({
+    //     path: "/life/life/equipmentTable",
+    //   })
+    // },
+
+    // //维保管理跳转
+    // toMaintenance() {
+    //   this.$router.push({
+    //     path: "/mainplan/maintenanceGraph/zhuye",
+    //   })
+    // },
+
+    // // 知识图谱跳转
+    // toGraph() {
+    //   this.$router.push({
+    //     path: "/graph/graph/show",
+    //   })
+    // },
+
+    // // 审核管理跳转
+    // toPlan() {
+    //   this.$router.push({
+    //     path: "/check/plan",
+    //   })
+    // },
 
     // 中间饼图
     getRelation() {
@@ -1427,11 +1467,6 @@ export default {
         this.loopStart()
       })
       this.loopStart()
-    },
-    toPlan(param) {
-      this.$router.push({
-        path: '/mainplan/maintenanceGraph/zhuye'
-      })
     },
     loopStart() {
       clearInterval(this.timer)
@@ -1958,14 +1993,23 @@ h3 {
   width: 100%;
   height: 100%;
   border-color: rgba(29, 86, 153, 0.5);
-  /* background: transparent !important; */
-  /* background-color: rgba(255, 255, 255, 0.4); */
   cursor: pointer;
 }
-.syxj{
+
+.sytp {
   /* width: 200%; */
-  /* height: 50%; */
+  height: 221px;
   margin-top: 3%;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.kg {
+  width: 400px;
+  height: 222px;
+  margin-top: 3%;
+  margin: 0 auto;
+  text-align: center;
 }
 
 .title {
