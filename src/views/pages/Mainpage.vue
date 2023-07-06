@@ -105,8 +105,8 @@
           <el-col :span="7">
             <div @click="toLife" class="rowdiv">
               <el-card class="box-card1" shadow="hover">
-                <div class="title" @click="toSystem">系统管理</div>
-
+                <div class="title" @click="toSystem">审核管理</div>
+                 <img class="syxj" src="../../assets/fzt.png">
               </el-card>
             </div>
 
