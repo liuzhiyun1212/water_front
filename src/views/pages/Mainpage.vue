@@ -34,7 +34,7 @@
                 <div style="width: 100%;">
                   <div class="title" @click="toTheSystem(1)">巡检管理</div>\
                 </div>
-                <div class="sytp">
+                <div class="sytp" :style="middleHeight1">
                   <img src="../../assets/首页巡检.png">
                 </div>
               </el-card>
@@ -96,7 +96,7 @@
                 <div style="width: 100%;">
                   <div class="title" @click="toTheSystem(7)">维保管理</div>
                 </div>
-                <div class="sytp">
+                <div class="sytp" :style="middleHeight1">
                   <img src="../../assets/维保管理.png">
                 </div>
               </el-card>
@@ -109,8 +109,8 @@
                 <div style="width: 100%;">
                   <div class="title" @click="toTheSystem(5)">知识图谱</div>
                 </div>
-                <div class="sytp">
-                  <img class="kg" src="../../assets/kg.png">
+                <div class="sytp" :style="middleHeight1">
+                  <img src="../../assets/kg.png">
                 </div>
               </el-card>
             </div>
@@ -122,7 +122,7 @@
                 <div style="width: 100%;">
                   <div class="title" @click="toTheSystem(2)">审核管理</div>
                 </div>
-                <div class="sytp">
+                <div class="sytp" :style="middleHeight1">
                   <img src="../../assets/fzt.png">
                 </div>
 
